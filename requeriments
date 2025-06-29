@@ -1,0 +1,101 @@
+1. Funcionalidades do Aplicativo
+
+1.1. Fluxo Principal
+
+O usuário pressiona o botão "Scanner".
+
+Escolhe entre:
+
+Tirar uma foto
+
+Selecionar uma imagem da galeria
+
+Cancelar
+
+Se escolher tirar foto, a câmera abre e o usuário captura a imagem.
+
+O usuário é redirecionado para a tela de seleção:
+
+Pode adicionar mais imagens
+
+Pode excluir uma imagem clicando no ícone de lixeira
+
+Pode salvar o PDF e escolher um nome
+
+Após salvar o PDF, o usuário é direcionado para a tela de gerenciamento de arquivos:
+
+Criar pastas
+
+Excluir pastas
+
+Renomear pastas
+
+Navegar pelos arquivos
+
+2. Estrutura das Telas e Navegação
+
+3. Estrutura de Arquivos e Componentes
+
+3.1. Estrutura do Projeto
+
+/src
+  |-- screens
+  |     |-- HomeScreen.tsx
+  |     |-- ScannerScreen.tsx
+  |     |-- PreviewScreen.tsx
+  |     |-- FileManagerScreen.tsx
+  |
+  |-- components
+  |     |-- CameraComponent.tsx
+  |     |-- GalleryPicker.tsx
+  |     |-- PdfPreview.tsx
+  |     |-- FileItem.tsx
+  |
+  |-- services
+  |     |-- pdfService.ts
+  |     |-- fileService.ts
+  |
+  |-- navigation
+  |     |-- AppNavigator.tsx
+
+3.2. Funcionalidades de Cada Arquivo
+
+HomeScreen.tsx: Tela inicial, botão "Scanner".
+
+ScannerScreen.tsx: Abre câmera ou galeria.
+
+PreviewScreen.tsx: Permite adicionar/excluir imagens e salvar como PDF.
+
+FileManagerScreen.tsx: Gerencia arquivos e pastas.
+
+CameraComponent.tsx: Componente para câmera.
+
+GalleryPicker.tsx: Seleciona imagens da galeria.
+
+PdfPreview.tsx: Mostra pré-visualização do PDF.
+
+FileItem.tsx: Componente para listar arquivos.
+
+pdfService.ts: Responsável por criar e salvar PDFs.
+
+fileService.ts: Manipula arquivos e pastas.
+
+AppNavigator.tsx: Configuração das rotas.
+
+4. Tecnologia e Frameworks
+
+4.1. Frontend (React Native + Expo Router)
+
+expo-camera: Para capturar imagens
+
+expo-image-picker: Para escolher imagens da galeria
+
+react-native-document-picker: Para manipular arquivos
+
+react-native-fs: Para salvar arquivos
+
+react-native-pdf-lib: Para criar PDFs
+
+4.2. Backend (Expo Print)
+
+Expo Print para processamento de imagens e conversão em PDF.
