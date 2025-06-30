@@ -33,7 +33,7 @@ Aplicativo de scanner de documentos desenvolvido com React Native e Expo, focado
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITÓRIO]
+git clone [[URL_DO_REPOSITÓRIO](https://github.com/jpedrocaceres/ScannApp)]
 ```
 
 2. Instale as dependências:
@@ -87,7 +87,7 @@ O projeto utiliza TypeScript com configurações estritas para garantir a qualid
 
 - Android: 6.0 (API 23) ou superior
 - Expo Go: 2.32.19
-- Expo SDK: 52
+- Expo SDK: 53
 
 ## Contribuição
 
@@ -96,7 +96,3 @@ O projeto utiliza TypeScript com configurações estritas para garantir a qualid
 3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
-
-## Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes. 
