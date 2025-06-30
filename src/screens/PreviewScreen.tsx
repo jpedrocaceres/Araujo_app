@@ -76,7 +76,7 @@ export default function PreviewScreen() {
   };
 
   const handleRotateImage = (index: number) => {
-    setImages(images.map((img, i) => 
+    setImages(images.map((img, i) =>
       i === index ? { ...img, rotation: (img.rotation + 90) % 360 } : img
     ));
   };
@@ -102,14 +102,29 @@ export default function PreviewScreen() {
 
     try {
       const html = `
-        <html>
-          <body>
-            ${images.map(image => `
-              <img src="${image.uri}" style="width: 100%; margin-bottom: 20px; transform: rotate(${image.rotation}deg);" />
-            `).join('')}
-          </body>
-        </html>
-      `;
+            <html>
+              <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>
+                  body {
+                    margin: 0;
+                    padding: 0;
+                  }
+                  img {
+                    display: block;
+                    max-width: 100%;
+                    height: auto;
+                    margin: 0 auto 20px auto;
+                  }
+                </style>
+              </head>
+              <body>
+                ${images.map(image => `
+                  <img src="${image.uri}" style="transform: rotate(${image}deg);" />
+                `).join('')}
+              </body>
+            </html>
+          `;
 
       const { uri } = await Print.printToFileAsync({
         html,
@@ -172,16 +187,16 @@ export default function PreviewScreen() {
           <Text style={styles.buttonText}>Adicionar Imagem</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.button} 
+        <TouchableOpacity
+          style={styles.button}
           onPress={() => setShowDirectoryModal(true)}
         >
           <Ionicons name="folder" size={24} color="#007AFF" />
           <Text style={styles.buttonText}>Escolher Pasta</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={[styles.button, styles.saveButton]} 
+        <TouchableOpacity
+          style={[styles.button, styles.saveButton]}
           onPress={() => setShowFileNameModal(true)}
         >
           <Ionicons name="save" size={24} color="#fff" />
@@ -211,7 +226,7 @@ export default function PreviewScreen() {
                 value={newDirectoryName}
                 onChangeText={setNewDirectoryName}
               />
-              <TouchableOpacity 
+              <TouchableOpacity
                 style={styles.createButton}
                 onPress={handleCreateDirectory}
               >
@@ -251,7 +266,7 @@ export default function PreviewScreen() {
               onChangeText={setFileName}
             />
 
-            <TouchableOpacity 
+            <TouchableOpacity
               style={[styles.button, styles.saveButton]}
               onPress={handleSavePDF}
             >

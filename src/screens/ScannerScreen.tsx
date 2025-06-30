@@ -22,7 +22,7 @@ export default function ScannerScreen() {
   const handleCamera = async () => {
     if (hasPermission) {
       const result = await ImagePicker.launchCameraAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        mediaTypes: 'images',
         allowsEditing: true,
         aspect: [4, 3],
         quality: 1,
@@ -38,7 +38,7 @@ export default function ScannerScreen() {
 
   const handleGallery = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: 'images',
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,

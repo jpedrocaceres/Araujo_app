@@ -6,4 +6,4 @@ export const A4_HEIGHT = 1123; // 297mm
 export const A4_ASPECT_RATIO = A4_HEIGHT / A4_WIDTH;
 
 // Diretório base para documentos
-export const BASE_DIRECTORY = 'Araujo Scan App'; 
+export const BASE_DIRECTORY = 'scannapp'; 
